@@ -48,4 +48,5 @@ return require('packer').startup(function(use)
     use('nvim-tree/nvim-tree.lua')
     use('nvim-tree/nvim-web-devicons')
     use('nvim-lualine/lualine.nvim')
+    use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
 end)
