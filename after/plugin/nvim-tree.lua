@@ -7,7 +7,13 @@ require("nvim-tree").setup({
             list = {
                 { key = "<C-x>", action = "vsplit" }
             }
+        },
+        side = "right",
+        float = {
+            eneable = true,
+            quit_on_focus_loss = false
         }
+
     }
 })
 
