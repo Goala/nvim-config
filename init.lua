@@ -1,1 +1,3 @@
-require("mst")
+require("vim-options")
+require("config.lazy")
+
