@@ -1,4 +1,3 @@
-
 return {
-  "unblevable/quick-scope",
+	"unblevable/quick-scope",
 }
