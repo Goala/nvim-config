@@ -25,6 +25,9 @@ return {
 			lspconfig.ts_ls.setup({
 				capabilities = capabilities,
 			})
+			lspconfig.gopls.setup({
+				capabilities = capabilities,
+			})
 
 			-- Displays hover information about the symbol under the cursor
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
