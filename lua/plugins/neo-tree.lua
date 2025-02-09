@@ -25,5 +25,6 @@ return {
       position = "right", -- OPTIONAL, this is the default value
     })
     vim.keymap.set("n", "<C-n>", ":Neotree filesystem reveal right<CR>", {})
+    vim.keymap.set("n", "<C-b>", ":Neotree buffers reveal right<CR>", {})
   end,
 }
