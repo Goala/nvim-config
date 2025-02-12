@@ -11,16 +11,19 @@ return {
   end,
   config = function()
     require("neo-tree").setup({
-      -- filesystem = {
-      -- 	filtered_items = {
-      -- 		-- visible = true, -- This is what you want: If you set this to `true`, all "hide" just mean "dimmed out"
-      -- 		hide_dotfiles = false,
-      -- 		hide_gitignored = true,
-      -- 	},
-      -- },
+      filesystem = {
+        filtered_items = {
+          visible = true,
+          hide_dotfiles = false,
+          -- hide_gitignored = true,
+        },
+        follow_current_file = {
+          enabled = true,
+        },
+      },
     })
     require("neo-tree.command").execute({
-      action = "right",   -- OPTIONAL, this is the default value
+      action = "focus",   -- OPTIONAL, this is the default value
       source = "filesystem", -- OPTIONAL, this is the default value
       position = "right", -- OPTIONAL, this is the default value
     })
