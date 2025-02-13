@@ -20,38 +20,16 @@ return {
             require("telescope.themes").get_dropdown({}),
           },
         },
-        file_ignore_patterns = {
-          "node_modules",
-        },
-        defaults = {
-          vimgrep_arguments = {
-            "rg",
-            "--hidden",
-            "--color=never",
-            "--no-heading",
-            "--with-filename",
-            "--line-number",
-            "--column",
-            "--smart-case",
-            "-uu",
-          },
-        },
         pickers = {
+          live_grep = {
+            file_ignore_patterns = { "**/node_modules", ".git", ".venv", "**/package-lock.json" },
+            additional_args = function(_)
+              return { "--hidden" }
+            end,
+          },
           find_files = {
+            file_ignore_patterns = { "node_modules", ".git", ".venv" },
             hidden = true,
-            find_command = {
-              "rg",
-              "--files",
-              "--hidden",
-              "--glob=!**/.git/*",
-              "--glob=!**/.idea/*",
-              "--glob=!**/.vscode/*",
-              "--glob=!**/build/*",
-              "--glob=!**/dist/*",
-              "--glob=!**/node_modules/*",
-              "--glob=!**/yarn.lock",
-              "--glob=!**/package-lock.json",
-            },
           },
         },
       })
