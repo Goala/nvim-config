@@ -5,7 +5,7 @@ return {
     require("gitblame").setup({
       --Note how the `gitblame_` prefix is omitted in `setup`
       enabled = true,
-      date_format = "%m-%d-%Y %H:%M:%S",
+      date_format = "%d-%m-%Y %H:%M:%S",
     })
   end,
 }
