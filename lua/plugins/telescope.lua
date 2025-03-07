@@ -9,6 +9,7 @@ return {
       vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Telescope live grep" })
       vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })
       vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
+      vim.keymap.set("n", "<leader>fl", builtin.resume, { desc = "Resume last picker" })
     end,
   },
   {
@@ -22,13 +23,13 @@ return {
         },
         pickers = {
           live_grep = {
-            file_ignore_patterns = { "**/node_modules", ".git", ".venv", "**/package-lock.json" },
+            file_ignore_patterns = { "**/node_modules", ".git/", ".venv/" },
             additional_args = function(_)
               return { "--hidden" }
             end,
           },
           find_files = {
-            file_ignore_patterns = { "node_modules", ".git", ".venv" },
+            file_ignore_patterns = { "**/node_modules/", ".git/", ".venv/" },
             hidden = true,
           },
         },
