@@ -8,3 +8,5 @@ vim.cmd("set ignorecase")
 vim.cmd("set smartcase")
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
+
+vim.keymap.set({ "n", "v" }, "Y", '"+y')
