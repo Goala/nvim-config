@@ -24,15 +24,15 @@ require("lazy").setup({
       import = "plugins_vscode",
       cond = function()
         return vim.g.vscode
-      end
+      end,
     },
     {
       import = "plugins_notvscode",
       cond = function()
         return not vim.g.vscode
-      end
+      end,
     },
   },
-  install = { colorscheme = { "habamax" } },
+  install = { colorscheme = { "tokyonight" } },
   checker = { enabled = false },
 })
