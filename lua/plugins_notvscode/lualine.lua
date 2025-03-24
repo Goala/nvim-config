@@ -4,8 +4,18 @@ return {
   config = function()
     require("lualine").setup({
       options = {
-        globalstatus = true
-      }
+        globalstatus = true,
+      },
+      sections = {
+        lualine_c = {
+          {
+            "filename",
+          },
+          {
+            "aerial",
+          },
+        },
+      },
     })
   end,
 }
