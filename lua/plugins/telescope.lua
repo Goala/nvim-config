@@ -11,6 +11,14 @@ return {
 			vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })
 			vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
 			vim.keymap.set("n", "<leader>fl", builtin.resume, { desc = "Resume last picker" })
+			vim.keymap.set("n", "<leader>fwg", function()
+				local word = vim.fn.expand("<cword>")
+				builtin.grep_string({ search = word })
+			end)
+			vim.keymap.set("n", "<leader>fwwg", function()
+				local word = vim.fn.expand("<cWORD>")
+				builtin.grep_string({ search = word })
+			end)
 		end,
 	},
 	{
