@@ -1,4 +1,4 @@
 return {
 	"unblevable/quick-scope",
-	event = "VeryLazy",
+	event = { "BufReadPost", "BufNewFile", "BufWritePre" },
 }
