@@ -50,7 +50,8 @@ return {
 			vim.keymap.set("n", "<F2>", vim.lsp.buf.rename, {})
 
 			-- Show diagnostics in a floating window
-			vim.keymap.set("n", "gl", builtin.diagnostics, {})
+			vim.keymap.set("n", "gl", vim.diagnostic.open_float, {})
+			vim.keymap.set("n", "gal", builtin.diagnostics, {})
 
 			-- Move to the previous diagnostic
 			vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, {})
