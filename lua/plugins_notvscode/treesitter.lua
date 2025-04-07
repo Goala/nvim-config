@@ -9,6 +9,8 @@ return {
 			indent = { enable = true },
 		})
 
+
+    -- https://neovim.io/doc/user/fold.html#fold-commands
 		vim.opt.foldmethod = "expr"
 		vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 		vim.opt.foldcolumn = "0"
