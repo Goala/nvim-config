@@ -6,6 +6,7 @@ vim.cmd("set number")
 vim.cmd("set relativenumber")
 vim.cmd("set ignorecase")
 vim.cmd("set smartcase")
+vim.cmd("set signcolumn=no")
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
