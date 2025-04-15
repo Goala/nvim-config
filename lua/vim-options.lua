@@ -10,6 +10,11 @@ vim.cmd("set signcolumn=no")
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+vim.opt.swapfile = false
+vim.opt.backup = false
+vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.opt.undofile = true
+
 vim.keymap.set({ "n", "v" }, "Y", '"+y')
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("v", "<leader>s", [["hy:%s/\V<C-r>h/<C-r>h/gc<Left><Left><Left>]])
