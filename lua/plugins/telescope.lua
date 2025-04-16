@@ -24,7 +24,7 @@ return {
 				local word = vim.fn.expand("<cWORD>")
 				builtin.grep_string({ search = word })
 			end)
-			vim.keymap.set("v", "<leader>fhg", function()
+			vim.keymap.set("v", "<leader>fg", function()
 				vim.cmd([[noau normal! "hy]])
 				local visual_selection = vim.fn.getreg("h")
 				builtin.grep_string({ search = visual_selection })
