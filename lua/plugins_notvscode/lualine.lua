@@ -10,10 +10,7 @@ return {
 				lualine_c = {
 					{
 						"filename",
-						path = 4,
-					},
-					{
-						"aerial",
+						path = 3,
 					},
 				},
 			},
