@@ -8,6 +8,10 @@ return {
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
+			vim.diagnostic.config({
+				float = { border = "rounded" },
+			})
+
 			require("mason").setup()
 			require("mason-lspconfig").setup({
 				ensure_installed = { "lua_ls" },
