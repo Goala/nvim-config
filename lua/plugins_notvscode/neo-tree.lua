@@ -22,16 +22,17 @@ return {
 				},
 				window = {
 					mappings = {
-						["<leader>p"] = "preview_image", -- " or another map
+						["<leader>p"] = "preview_in_explorer", -- " or another map
 					},
 				},
 				commands = {
-					preview_image = function(state)
+					preview_in_explorer = function(state)
 						local node = state.tree:get_node()
-						if node.type == "file" then
-							-- ensure imagemagic is installed
-							os.execute("display " .. node.path .. "&")
-						end
+						-- if node.type == "file" then
+						-- ensure imagemagic is installed
+						-- os.execute("display " .. node.path .. "&")
+						os.execute("explorer.exe `wslpath -w " .. node.path .. "`&")
+						-- end
 					end,
 				},
 			},
