@@ -22,3 +22,10 @@ vim.keymap.set("n", "<C-W>t", ":tabe %<CR>")
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+vim.keymap.set("n", "tp", function()
+	return "<cmd>" .. vim.v.count .. "t.<cr>"
+end, { expr = true })
+vim.keymap.set("n", "rp", function()
+	return "<cmd>-" .. vim.v.count .. "t.<cr>"
+end, { expr = true })
