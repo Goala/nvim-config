@@ -31,7 +31,7 @@ return {
 						-- if node.type == "file" then
 						-- ensure imagemagic is installed
 						-- os.execute("display " .. node.path .. "&")
-						os.execute("explorer.exe `wslpath -w " .. node.path .. "`&")
+						os.execute("explorer.exe `wslpath -w '" .. node.path .. "'`&")
 						-- end
 					end,
 				},
