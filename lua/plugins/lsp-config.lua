@@ -24,6 +24,21 @@ return {
 				},
 			})
 
+			local lspconfig = require("lspconfig")
+			lspconfig.lua_ls.setup({
+				capabilities = capabilities,
+				settings = {
+					Lua = {
+						diagnostics = {
+							globals = { "vim" }, -- Recognize 'vim' as a global variable
+						},
+						workspace = {
+							library = vim.api.nvim_get_runtime_file("", true), -- Include Neovim runtime files
+						},
+					},
+				},
+			})
+
 			local builtin = require("telescope.builtin")
 
 			-- Displays hover information about the symbol under the cursor
