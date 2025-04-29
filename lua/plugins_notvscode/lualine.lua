@@ -2,6 +2,7 @@ return {
 	"nvim-lualine/lualine.nvim",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
+    local undotree_extension = { sections = { lualine_a = {'filetype'} }, filetypes = {'undotree'} }
 		require("lualine").setup({
 			options = {
 				globalstatus = true,
@@ -14,7 +15,7 @@ return {
 						path = 1,
 					},
 				},
-				lualine_z = {
+				lualine_y = {
 					{
 						"lsp_status",
 						icon = "", -- f013
@@ -31,9 +32,9 @@ return {
 							"null-ls",
 						},
 					},
-					{ "location" },
 				},
 			},
+			extensions = { "trouble", "quickfix", "lazy", "mason", "neo-tree", "symbols-outline", undotree_extension },
 		})
 	end,
 }
