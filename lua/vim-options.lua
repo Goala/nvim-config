@@ -23,6 +23,16 @@ vim.keymap.set("n", "<C-W>t", ":tabe %<CR>")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
+vim.api.nvim_create_autocmd("TextYankPost", {
+	desc = "Highlight on yank",
+	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
+	callback = function()
+		vim.highlight.on_yank({
+			higroup = "Visual",
+		})
+	end,
+})
+
 -- vim.keymap.set("n", "tp", function()
 -- 	return "<cmd>" .. vim.v.count .. "t.<cr>"
 -- end, { expr = true })
