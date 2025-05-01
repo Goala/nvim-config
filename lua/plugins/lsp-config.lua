@@ -4,6 +4,14 @@ return {
 		dependencies = {
 			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
+			{
+				"folke/lazydev.nvim",
+				opts = {
+					library = {
+						{ path = "${3rd}/luv/library", words = { "vim%.uv" } },
+					},
+				},
+			},
 		},
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -14,6 +22,7 @@ return {
 
 			require("mason").setup()
 			require("mason-lspconfig").setup({
+				automatic_installation = true,
 				ensure_installed = { "lua_ls" },
 				handlers = {
 					function(server_name)
@@ -24,20 +33,20 @@ return {
 				},
 			})
 
-			local lspconfig = require("lspconfig")
-			lspconfig.lua_ls.setup({
-				capabilities = capabilities,
-				settings = {
-					Lua = {
-						diagnostics = {
-							globals = { "vim" }, -- Recognize 'vim' as a global variable
-						},
-						workspace = {
-							library = vim.api.nvim_get_runtime_file("", true), -- Include Neovim runtime files
-						},
-					},
-				},
-			})
+			-- local lspconfig = require("lspconfig")
+			-- lspconfig.lua_ls.setup({
+			-- 	capabilities = capabilities,
+			-- 	settings = {
+			-- 		Lua = {
+			-- 			diagnostics = {
+			-- 				globals = { "vim" }, -- Recognize 'vim' as a global variable
+			-- 			},
+			-- 			workspace = {
+			-- 				library = vim.api.nvim_get_runtime_file("", true), -- Include Neovim runtime files
+			-- 			},
+			-- 		},
+			-- 	},
+			-- })
 
 			local builtin = require("telescope.builtin")
 
